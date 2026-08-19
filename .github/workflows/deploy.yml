@@ -1,0 +1,32 @@
+name: Scheduled Deploy
+
+on:
+  schedule:
+    # 日本時間 2026年9月1日 00:00（UTC 2026年8月31日 15:00）に自動実行
+    - cron: '0 15 31 8 *'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Fetch draft branch
+        run: |
+          git fetch origin draft:draft
+
+      - name: Copy ALL files from draft to main
+        run: |
+          # draftブランチの全ファイルを現在のmainに丸ごと上書きコピー
+          git checkout draft -- .
+
+      - name: Commit and Push to main
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@://github.com"
+          git add .
+          git commit -m "Automated scheduled deploy for 2026-09-01" || exit 0
+          git push origin main
