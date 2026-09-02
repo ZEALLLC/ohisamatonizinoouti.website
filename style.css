@@ -302,6 +302,24 @@ footer.site-footer{
 .nowrap-text{white-space:nowrap;}
 @media (max-width:640px){.nowrap-text{white-space:normal;}}
 
+/* ---------- モバイル時のマスコット画像はみ出し防止 ---------- */
+@media (max-width:640px){
+  .hero-title-wrap{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    gap:8px !important;
+  }
+  .hero-title-wrap img{
+    position:static !important;
+    top:auto !important;
+    left:auto !important;
+    margin-left:0 !important;
+    width:100px !important;
+    transform:none !important;
+  }
+}
+
 /* ---------- ブログ記事ページ ---------- */
 .article-wrap{max-width:720px;margin:0 auto;}
 .article-meta{color:var(--sun-orange-dark);font-weight:700;font-size:.85rem;margin-bottom:10px;}
