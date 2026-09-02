@@ -302,6 +302,22 @@ footer.site-footer{
 .nowrap-text{white-space:nowrap;}
 @media (max-width:640px){.nowrap-text{white-space:normal;}}
 
+/* ---------- モバイル時：事業内容の位置合わせ用スペーサーを解除 ---------- */
+@media (max-width:480px){
+  .align-spacer{display:none !important;}
+}
+
+/* ---------- モバイル時のトップページ ヒーロー画像 見切れ防止 ---------- */
+@media (max-width:640px){
+  .hero{
+    background-size:100% auto !important;
+    padding:24px 0 32vw !important;
+  }
+  .hero .eyebrow{
+    margin-top:13vw !important;
+  }
+}
+
 /* ---------- モバイル時のマスコット画像はみ出し防止 ---------- */
 @media (max-width:640px){
   .hero-title-wrap{
