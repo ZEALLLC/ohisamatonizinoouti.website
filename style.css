@@ -301,6 +301,7 @@ footer.site-footer{
 @media (max-width:640px){.facility-line{white-space:normal;}}
 .nowrap-text{white-space:nowrap;}
 @media (max-width:640px){.nowrap-text{white-space:normal;}}
+@media (max-width:640px){.mb-break{display:block;}}
 
 /* ---------- モバイル時：事業内容の位置合わせ用スペーサーを解除 ---------- */
 @media (max-width:480px){
